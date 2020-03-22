@@ -1,6 +1,6 @@
 <template>
     <div class="game-level">
-        <h1>{{level}}</h1>
+        <h1>⚡ lv {{level}}</h1>
     </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
     name: 'game-level',
     computed: {
         level () {
-            return `⚡ XP ${this.$store.state.level}`
+            return this.$store.state.level
         }
     }
 }
@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
     .game-level h1 {
         color: #444;
-        font-size: 30px;
+        font-size: var(--base-font);
         text-transform: lowercase;
         letter-spacing: 10px;
         font-weight: 400;
