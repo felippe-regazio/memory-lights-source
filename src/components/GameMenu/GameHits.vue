@@ -1,5 +1,5 @@
 <template>
-	<span class="game-hits">{{icon}} {{hits}} hits</span>
+	<span class="game-hits">{{icon}} {{hits}} hit{{hits == 1 ? "" : "s"}}</span>
 </template>
 
 <script>
@@ -19,13 +19,16 @@
                     70:  '😛',
                     80:  '😜',
                     90:  '🙃',
-                    100:  '😎'
+                    100: '😎'
                 }
             }
         },
 		computed: {
 			hits () {
-                const hits = this.$store.state.hits.length;
+                let hits = this.$store.state.hits.length;
+                if (this.$store.state.state == "gameover") {
+                    hits--;
+                }
                 this.iconPerHit(hits);
 				return hits;
             }
