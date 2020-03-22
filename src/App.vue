@@ -5,6 +5,12 @@
 </template>
 
 <style lang="scss">
+  :root {
+    --base-font: 30px;
+    @media screen and (max-width: 768px) {
+      --base-font: 20px;
+    }
+  }
   html, body {
     font-family: Arial, Helvetica, sans-serif;
     * {

@@ -1,6 +1,6 @@
 <template>
   <div class="game-lights-button">
-    <button ref="btn" :style="`background-color:${color}`" @click='click()' :data-light-button="shortkey">
+    <button ref="btn" :style="`background-color:${color}`" @click='click($event)' :data-light-button="shortkey">
         {{shortkey}}
     </button>  
   </div>
@@ -24,11 +24,18 @@ export default {
     }
   }, 
   methods: {
-    click () {
+    click ($event) {
+      const turn = this.$store.state.state;
+      if (turn != 'listening' && (!$event || $event.isTrusted)) {
+        // if user triggered an action when is not its turn
+        // the action will be ignored. 
+        return;
+      }
       const $btn = this.$refs.btn;
-      const key = $btn.dataset.lightButton.toLowerCase();
+      const key = $btn?.dataset?.lightButton.toLowerCase();
       $btn.classList.add('click');
       setTimeout(() => { $btn.classList.remove('click'); }, 200);
+      this.playSound(require(`@/assets/sounds/${this.sound}`));
       this.checkSequence(key);
     },
     checkSequence (key) {
@@ -49,6 +56,10 @@ export default {
           window.$gamelights.gameOver();
         }
       }
+    },
+    playSound (sound) {
+      const audio = new Audio(sound);
+      audio.play();
     }    
   },
   mounted () {

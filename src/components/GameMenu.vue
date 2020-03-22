@@ -24,16 +24,28 @@ export default {
     },
     data () {
         return {
-            started: this.$store.state.started
+            started: false
         }
     },
     methods: {
         start () {
-            this.started = true;
             setTimeout(() => {
-                window.$gamelights.levelUp();
+                this.restartGame();
             }, 500);
+        },
+        restartGame () {
+            if (!this.$store.state.started) {
+                this.started = true;
+                window.$gamelights.restart();
+            }
         }
+    },
+    mounted () {
+        document.addEventListener('keyup', e => {
+            if (e.key.toLowerCase() == 'enter' || e.code.toLowerCase() == 'enter') {
+                this.restartGame();
+            }
+        });
     }
 }
 </script>

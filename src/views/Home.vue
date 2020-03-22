@@ -9,6 +9,7 @@
       <game-lights msg="Welcome to Your Vue.js App"/>
       <game-menu/>
     </div>
+    <game-footer/>
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import GameLogo from '@/components/GameLogo.vue'
 import GameLights from '@/components/GameLights.vue'
 import GameMenu from '@/components/GameMenu.vue'
 import GameLevel from '@/components/GameMenu/GameLevel.vue'
+import GameFooter from '@/components/GameFooter.vue'
 
 
 export default {
@@ -28,7 +30,8 @@ export default {
     GameLogo,
     GameMenu,
     GameLights,
-    GameLevel
+    GameLevel,
+    GameFooter
   }
 }
 </script>
@@ -39,6 +42,7 @@ export default {
   .game-header {
     display: flex;
     align-items: center;
+    margin-top: 20px;
     justify-content: space-between;
   }
 }

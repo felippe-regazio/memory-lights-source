@@ -2,9 +2,9 @@
   <div :class="`game-lights ${state}`">
       <gl-holder>
         <gl-button :shortkey="'E'" :color="'#FF0000'" :sound="'1.mp3'"/>
-        <gl-button :shortkey="'I'" :color="'#008000'" :sound="'1.mp3'"/>
-        <gl-button :shortkey="'F'" :color="'#0000FF'" :sound="'1.mp3'"/>
-        <gl-button :shortkey="'J'" :color="'#008B8B'" :sound="'1.mp3'"/>
+        <gl-button :shortkey="'I'" :color="'#008000'" :sound="'2.mp3'"/>
+        <gl-button :shortkey="'F'" :color="'#0000FF'" :sound="'3.mp3'"/>
+        <gl-button :shortkey="'J'" :color="'#008B8B'" :sound="'4.mp3'"/>
       </gl-holder>
       <game-over v-if="state == 'gameover'"/>
   </div>
@@ -76,7 +76,8 @@ export default {
       this.$store.state.level = 0;
       this.$store.state.elapsedTime = 0;
       this.$store.state.currentSequence = [];
-      this.$store.state.sequenceListener = undefined;       
+      this.$store.state.sequenceListener = undefined;  
+      window?.$gamelights_timer?.reset();     
       setTimeout(() => {
           window.$gamelights.levelUp();
       }, 500);      
