@@ -75,6 +75,10 @@ export default {
 
 <style scoped lang="scss">
   .game-lights-button {
+    outline: none;
+    user-selection: none;
+    animation: effect_dylan 800ms;
+    -webkit-tap-highlight-color: transparent;    
     button {
       position: relative;
       display: inline-block;
@@ -111,21 +115,28 @@ export default {
       &.click {
         opacity: 1;
         pointer-events: none;
+        user-select: none;
         &:before {
+          outline: none;
+          user-selection: none;
+          pointer-events: none;        
           animation: effect_dylan 800ms;
         }
       }      
     }
     @keyframes effect_dylan {
       50% {
+        will-change: scale;
         transform: scale(3, 3);
         opacity: 0;
       }
       99% {
+        will-change: scale;
         transform: scale(0.001, 0.001);
         opacity: 0;
       }
       100% {
+        will-change: scale;
         transform: scale(0.001, 0.001);
         opacity: 1;
       }
