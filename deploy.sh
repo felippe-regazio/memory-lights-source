@@ -15,6 +15,6 @@ fi
 
 git subtree split --prefix ${DISTRIBUTION_DIRECTORY} -b ${TEMP_DEPLOYMENT_BRANCH}
 
-git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH} master:master
+git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
 
 git branch -D ${TEMP_DEPLOYMENT_BRANCH}
