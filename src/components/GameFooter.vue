@@ -19,6 +19,8 @@
 						<li>You can press Enter to start/restart the game</li>
 						<li>The game has no end, test your limits</li>
 					</ul>
+					<br/>
+					<p>This game is a variation of the <a href="https://en.wikipedia.org/wiki/Simon_(game)" target="_blank">Simon Game</a></p>
 					<h1 aria-role="button" class="ok" @click="toggleHowToPlay">Ok</h1>
 				</div>
 			</div>
@@ -71,10 +73,15 @@
 					}
 				}
 				.ok {
+					cursor: pointer;
 					color: purple;
 					width: 100%;
 					text-align: center;
 					margin: 40px 0;
+					opacity: .8;
+					&:hover {
+						opacity: 1;
+					}
 				}
 				ul {
 					margin: 0;
