@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/memory-lights/'
+	publicPath: process.env.NODE_ENV === 'production' ? '/memory-lights/' : '/'
 }
