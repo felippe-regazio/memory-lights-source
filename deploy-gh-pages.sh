@@ -9,7 +9,7 @@
 # This script will deploy the CURRENT branch to TARGET_DEPLOYMENT_BRANCH
 set -o
 
-TARGET_DEPLOYMENT_BRANCH='$1'
+TARGET_DEPLOYMENT_BRANCH=$1
 DISTRIBUTION_DIRECTORY='dist'
 
 npm run build
