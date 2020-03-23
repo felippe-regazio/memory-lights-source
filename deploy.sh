@@ -13,7 +13,7 @@ then
   exit 1;
 fi
 
-git subtree split --prefix date -b ${TEMP_DEPLOYMENT_BRANCH}
+git subtree split --prefix ${date +%s} -b ${TEMP_DEPLOYMENT_BRANCH}
 
 git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
 
