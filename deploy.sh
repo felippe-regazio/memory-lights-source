@@ -13,7 +13,7 @@ then
   exit 1;
 fi
 
-git -rm -rf --cache .
+git rm -rf --cache .
 
 git subtree split --prefix ${DISTRIBUTION_DIRECTORY} -b ${TEMP_DEPLOYMENT_BRANCH}
 
