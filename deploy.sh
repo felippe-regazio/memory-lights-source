@@ -19,3 +19,6 @@ git init .
 git add .
 git commit -m "deploy"
 git push -f ${TARGET_REPOSITORY_URL} master:master
+
+cd ..
+rm -rf dist
