@@ -13,8 +13,6 @@ then
   exit 1;
 fi
 
-git rm -rf --cache .
-
 git subtree split --prefix ${DISTRIBUTION_DIRECTORY} -b ${TEMP_DEPLOYMENT_BRANCH}
 
 git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
