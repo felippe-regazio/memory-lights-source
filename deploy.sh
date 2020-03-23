@@ -18,4 +18,4 @@ cd dist
 git init .
 git add .
 git commit -m "deploy"
-git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
+git push -f ${TARGET_REPOSITORY_URL} master:master
