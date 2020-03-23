@@ -13,8 +13,8 @@ then
   exit 1;
 fi
 
-git subtree split --prefix ${DISTRIBUTION_DIRECTORY} -b ${TEMP_DEPLOYMENT_BRANCH}
+cd dist
 
-git push -f ${TEMP_DEPLOYMENT_BRANCH} ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
-
-git branch -D ${TEMP_DEPLOYMENT_BRANCH}
+git add .
+git commit -m "deploy"
+git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
