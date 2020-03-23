@@ -13,7 +13,9 @@ then
   exit 1;
 fi
 
-git subtree split --prefix ${date +%s} -b ${TEMP_DEPLOYMENT_BRANCH}
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch -rf dist' --prune-empty -f HEAD
+
+git subtree split --prefix $(date +%s) -b ${TEMP_DEPLOYMENT_BRANCH}
 
 git push -f ${TARGET_REPOSITORY_URL} ${TEMP_DEPLOYMENT_BRANCH}:master
 
