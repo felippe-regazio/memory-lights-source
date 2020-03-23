@@ -1,5 +1,7 @@
 # Memory Lights
 
+This is a [Simon Game](https://en.wikipedia.org/wiki/Simon_(game)) variation made with Vue JS.
+
 ## Project setup
 ```bash
 npm install
@@ -30,3 +32,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 The script pushes the "dist" folder to https://github.com/felippe-regazio/memory-lights.git.
 This is the release repository available on gh pages: 
+
+### About
+
+Memory Lights by Felippe Regazio
