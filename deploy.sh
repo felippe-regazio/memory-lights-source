@@ -1,6 +1,6 @@
 set -o
 
-TARGET_REPOSITORY_URL=''
+TARGET_REPOSITORY_URL='https://github.com/felippe-regazio/memory-lights.git'
 TEMP_DEPLOYMENT_BRANCH='gh-page-tmp'
 DISTRIBUTION_DIRECTORY='dist'
 
